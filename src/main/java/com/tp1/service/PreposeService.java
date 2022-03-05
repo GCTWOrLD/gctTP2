@@ -2,6 +2,7 @@ package com.tp1.service;
 
 import com.tp1.model.Client;
 import com.tp1.model.Document;
+import com.tp1.model.Livre;
 import com.tp1.persistence.ClientDao;
 import com.tp1.persistence.DocumentDao;
 
@@ -33,5 +34,9 @@ public class PreposeService {
 
     public List<Document> searchDocByAnnee(int annee) {
         return documentDao.findByAnnee(annee);
+    }
+
+    public List<Livre> searchLivreByGenre(String genre) {
+        return documentDao.findLivreByGenre(genre);
     }
 }

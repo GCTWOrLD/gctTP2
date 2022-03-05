@@ -2,14 +2,10 @@ package com.tp1.presentation;
 
 import com.tp1.model.Cd;
 import com.tp1.model.Client;
+import com.tp1.model.Livre;
 import com.tp1.persistence.ClientDaoJpa;
 import com.tp1.persistence.DocumentDaoJpa;
 import com.tp1.service.AdminService;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import java.io.IOException;
 
 public class MainLibrairie {
 
@@ -28,6 +24,14 @@ public class MainLibrairie {
 
         Cd cd3 = new Cd(3, "Wednesday", "deadmau5", 2016, null, "3:55", "Electronique", "mau5trap");
 
+        Livre livre = new Livre(4, "Le Lezard", "Paul Lamarche", 1999, null, "Editions Soleil", "Roman");
+
+        Livre livre2 = new Livre(5, "Showbiz", "Denis Lachance", 2010, null, "Editions Royal", "Magazine");
+
+        Livre livre3 = new Livre(6, "Math 101", "Jean Laroux", 2010, null, "Editions School", "Manuel Scolaire");
+
+        Livre livre4 = new Livre(7, "English 101", "Joe Knox", 2012, null, "Editions School", "Manuel Scolaire");
+
         adminService.createDocument(cd);
         adminService.createDocument(cd2);
         adminService.createDocument(cd3);
@@ -35,5 +39,12 @@ public class MainLibrairie {
         System.out.println(adminService.searchDocByAuteur("deadmau5"));
 
         System.out.println(adminService.searchDocByAnnee(2014));
+
+        adminService.createDocument(livre);
+        adminService.createDocument(livre2);
+        adminService.createDocument(livre3);
+        adminService.createDocument(livre4);
+
+        System.out.println(adminService.searchLivreByGenre("Roman"));
     }
 }

@@ -1,6 +1,7 @@
 package com.tp1.persistence;
 
 import com.tp1.model.Document;
+import com.tp1.model.Livre;
 
 import java.util.List;
 
@@ -14,5 +15,5 @@ public interface DocumentDao {
 
     List<Document> findByAnnee(int annee);
 
-    List<Document> findByCategorie(String categorie);
+    List<Livre> findLivreByGenre(String genre);
 }

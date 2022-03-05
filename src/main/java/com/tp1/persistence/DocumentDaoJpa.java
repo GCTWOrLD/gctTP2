@@ -1,6 +1,7 @@
 package com.tp1.persistence;
 
 import com.tp1.model.Document;
+import com.tp1.model.Livre;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -57,7 +58,16 @@ public class DocumentDaoJpa implements DocumentDao {
     }
 
     @Override
-    public List<Document> findByCategorie(String categorie) {
-        return null;
+    public List<Livre> findLivreByGenre(String genre) {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+
+        final TypedQuery<Livre> query = em.createQuery("select l from Livre l where genre like :genreToSearch", Livre.class);
+        query.setParameter("genreToSearch", "%" + genre + "%");
+        final List<Livre> livres = query.getResultList();
+
+        em.getTransaction().commit();
+        em.close();
+        return livres;
     }
 }
