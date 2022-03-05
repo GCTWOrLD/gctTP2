@@ -26,7 +26,16 @@ public class DocumentDaoJpa implements DocumentDao {
 
     @Override
     public List<Document> findByTitre(String titre) {
-        return null;
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+
+        final TypedQuery<Document> query = em.createQuery("select d from Document d where titre like :titreToSearch", Document.class);
+        query.setParameter("titreToSearch", "%" + titre + "%");
+        final List<Document> documents = query.getResultList();
+
+        em.getTransaction().commit();
+        em.close();
+        return documents;
     }
 
     @Override

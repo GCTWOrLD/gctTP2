@@ -46,5 +46,7 @@ public class MainLibrairie {
         adminService.createDocument(livre4);
 
         System.out.println(adminService.searchLivreByGenre("Roman"));
+
+        System.out.println(adminService.searchByTitre("101"));
     }
 }

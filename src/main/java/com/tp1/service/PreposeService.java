@@ -28,6 +28,10 @@ public class PreposeService {
         documentDao.save(document);
     }
 
+    public List<Document> searchByTitre(String titre) {
+        return documentDao.findByTitre(titre);
+    }
+
     public List<Document> searchDocByAuteur(String auteur) {
         return documentDao.findByAuteur(auteur);
     }
