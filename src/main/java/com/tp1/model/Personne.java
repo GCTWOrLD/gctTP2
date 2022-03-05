@@ -8,13 +8,18 @@ public abstract class Personne {
     private String password;
     private String email;
     private String telephone;
-    private Adresse adresse;
+    private String rue;
+    private final String VILLE = "Javatown";
+    private final String PROVINCE = "QC";
+    private String codePostal;
+    private String numeroCivique;
 
     public Personne() {
 
     }
 
-    public Personne(int id, String prenom, String nom, String username, String password, String email, String telephone, Adresse adresse) {
+    public Personne(int id, String prenom, String nom, String username, String password, String email, String telephone,
+                    String rue, String codePostal, String numeroCivique) {
         this.id = id;
         this.prenom = prenom;
         this.nom = nom;
@@ -22,7 +27,9 @@ public abstract class Personne {
         this.password = password;
         this.email = email;
         this.telephone = telephone;
-        this.adresse = adresse;
+        this.rue = rue;
+        this.codePostal = codePostal;
+        this.numeroCivique = numeroCivique;
     }
 
     public int getId() {
@@ -81,12 +88,36 @@ public abstract class Personne {
         this.telephone = telephone;
     }
 
-    public Adresse getAdresse() {
-        return adresse;
+    public String getRue() {
+        return rue;
     }
 
-    public void setAdresse(Adresse adresse) {
-        this.adresse = adresse;
+    public void setRue(String rue) {
+        this.rue = rue;
+    }
+
+    public String getVILLE() {
+        return VILLE;
+    }
+
+    public String getPROVINCE() {
+        return PROVINCE;
+    }
+
+    public String getCodePostal() {
+        return codePostal;
+    }
+
+    public void setCodePostal(String codePostal) {
+        this.codePostal = codePostal;
+    }
+
+    public String getNumeroCivique() {
+        return numeroCivique;
+    }
+
+    public void setNumeroCivique(String numeroCivique) {
+        this.numeroCivique = numeroCivique;
     }
 
     @Override
@@ -99,7 +130,11 @@ public abstract class Personne {
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", telephone='" + telephone + '\'' +
-                ", adresse=" + adresse +
+                ", rue='" + rue + '\'' +
+                ", VILLE='" + VILLE + '\'' +
+                ", PROVINCE='" + PROVINCE + '\'' +
+                ", codePostal='" + codePostal + '\'' +
+                ", numeroCivique='" + numeroCivique + '\'' +
                 '}';
     }
 }

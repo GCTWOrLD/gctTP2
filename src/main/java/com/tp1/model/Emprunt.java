@@ -1,26 +1,25 @@
 package com.tp1.model;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Emprunt {
     private int id;
-    private Date dateEmprunt;
-    private Date dateRetour;
+    private LocalDateTime dateEmprunt;
+    private LocalDateTime dateRetour;
     private Client client;
     private Document document;
-    private Retard retard;
 
     public Emprunt() {
 
     }
 
-    public Emprunt(int id, Date dateEmprunt, Date dateRetour, Client client, Document document, Retard retard) {
+    public Emprunt(int id, LocalDateTime dateEmprunt, LocalDateTime dateRetour, Client client, Document document) {
         this.id = id;
         this.dateEmprunt = dateEmprunt;
         this.dateRetour = dateRetour;
         this.client = client;
         this.document = document;
-        this.retard = retard;
     }
 
     public int getId() {
@@ -31,19 +30,19 @@ public class Emprunt {
         this.id = id;
     }
 
-    public Date getDateEmprunt() {
+    public LocalDateTime getDateEmprunt() {
         return dateEmprunt;
     }
 
-    public void setDateEmprunt(Date dateEmprunt) {
+    public void setDateEmprunt(LocalDateTime dateEmprunt) {
         this.dateEmprunt = dateEmprunt;
     }
 
-    public Date getDateRetour() {
+    public LocalDateTime getDateRetour() {
         return dateRetour;
     }
 
-    public void setDateRetour(Date dateRetour) {
+    public void setDateRetour(LocalDateTime dateRetour) {
         this.dateRetour = dateRetour;
     }
 
@@ -63,14 +62,6 @@ public class Emprunt {
         this.document = document;
     }
 
-    public Retard getRetard() {
-        return retard;
-    }
-
-    public void setRetard(Retard retard) {
-        this.retard = retard;
-    }
-
     @Override
     public String toString() {
         return "Emprunt{" +
@@ -79,7 +70,6 @@ public class Emprunt {
                 ", dateRetour=" + dateRetour +
                 ", client=" + client +
                 ", document=" + document +
-                ", retard=" + retard +
                 '}';
     }
 }
