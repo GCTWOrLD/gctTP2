@@ -1,14 +1,21 @@
 package com.tp1.model;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name="Amendes")
 public class Amende {
+
+    @Id
     private int id;
     private BigDecimal montant;
     private LocalDateTime dateRetard;
     private int nbDeJoursEnRetard;
     private String nomDuDocument;
+    @ManyToOne
+    @JoinColumn(name = "Client_ID")
     private Client client;
 
     public Amende() {

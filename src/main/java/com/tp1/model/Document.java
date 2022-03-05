@@ -1,10 +1,20 @@
 package com.tp1.model;
 
+import javax.persistence.*;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="Type_Document")
+@Table(name="Documents")
 public abstract class Document {
+
+    @Id
     private int id;
     private String titre;
     private String auteur;
     private int annee;
+
+    @OneToOne(mappedBy = "Emprunt_ID")
     private Emprunt emprunt;
 
     public Document() {

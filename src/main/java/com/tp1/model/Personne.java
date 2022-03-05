@@ -1,6 +1,13 @@
 package com.tp1.model;
 
+import javax.persistence.*;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="Type_Personne")
+@Table(name="Personnes")
 public abstract class Personne {
+    @Id
     private int id;
     private String prenom;
     private String nom;

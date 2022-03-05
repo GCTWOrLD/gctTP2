@@ -1,5 +1,10 @@
 package com.tp1.model;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("Dvd")
 public class Dvd extends Document {
     private String duree;
     private String genre;

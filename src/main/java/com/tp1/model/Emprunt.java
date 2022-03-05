@@ -1,13 +1,24 @@
 package com.tp1.model;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+@Entity
+@Table(name="Emprunt")
 public class Emprunt {
+
+    @Id
     private int id;
     private LocalDateTime dateEmprunt;
     private LocalDateTime dateRetour;
+
+    @ManyToOne
+    @JoinColumn(name="Client_ID")
     private Client client;
+
+    @OneToOne
+    @JoinColumn(name = "Document_ID")
     private Document document;
 
     public Emprunt() {
