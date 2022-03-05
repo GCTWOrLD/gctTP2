@@ -5,6 +5,8 @@ import com.tp1.model.Document;
 import com.tp1.persistence.ClientDao;
 import com.tp1.persistence.DocumentDao;
 
+import java.util.List;
+
 public class AdminService {
 
     private ClientDao clientDao;
@@ -23,6 +25,10 @@ public class AdminService {
     public void createDocument(Document document) {
 
         documentDao.save(document);
+    }
+
+    public List<Document> searchDocByAuteur(String auteur) {
+        return documentDao.findByAuteur(auteur);
     }
 
 }
