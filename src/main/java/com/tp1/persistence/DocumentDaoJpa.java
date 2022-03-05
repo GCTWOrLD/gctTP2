@@ -44,7 +44,16 @@ public class DocumentDaoJpa implements DocumentDao {
 
     @Override
     public List<Document> findByAnnee(int annee) {
-        return null;
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+
+        final TypedQuery<Document> query = em.createQuery("select d from Document d where cast(annee as string) like :anneeToSearch", Document.class);
+        query.setParameter("anneeToSearch", "%" + annee + "%");
+        final List<Document> documents = query.getResultList();
+
+        em.getTransaction().commit();
+        em.close();
+        return documents;
     }
 
     @Override

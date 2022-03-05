@@ -30,4 +30,8 @@ public class PreposeService {
     public List<Document> searchDocByAuteur(String auteur) {
         return documentDao.findByAuteur(auteur);
     }
+
+    public List<Document> searchDocByAnnee(int annee) {
+        return documentDao.findByAnnee(annee);
+    }
 }

@@ -24,14 +24,16 @@ public class MainLibrairie {
 
         Cd cd = new Cd(1, "Monday", "deadmau5", 2014, null, "3:45", "Electronique", "mau5trap");
 
-        Cd cd2 = new Cd(2, "Tuesday", "deadmau5", 2014, null, "3:50", "Electronique", "mau5trap");
+        Cd cd2 = new Cd(2, "Tuesday", "deadmau5", 2015, null, "3:50", "Electronique", "mau5trap");
 
-        Cd cd3 = new Cd(3, "Wednesday", "deadmau5", 2014, null, "3:55", "Electronique", "mau5trap");
+        Cd cd3 = new Cd(3, "Wednesday", "deadmau5", 2016, null, "3:55", "Electronique", "mau5trap");
 
         adminService.createDocument(cd);
         adminService.createDocument(cd2);
         adminService.createDocument(cd3);
 
         System.out.println(adminService.searchDocByAuteur("deadmau5"));
+
+        System.out.println(adminService.searchDocByAnnee(2014));
     }
 }

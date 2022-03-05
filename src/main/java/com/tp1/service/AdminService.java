@@ -31,4 +31,7 @@ public class AdminService {
         return documentDao.findByAuteur(auteur);
     }
 
+    public List<Document> searchDocByAnnee(int annee) {
+        return documentDao.findByAnnee(annee);
+    }
 }
