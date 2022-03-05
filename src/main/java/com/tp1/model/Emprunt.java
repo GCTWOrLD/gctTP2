@@ -17,8 +17,8 @@ public class Emprunt {
     @JoinColumn(name="Client_ID")
     private Client client;
 
-    @OneToOne
-    @JoinColumn(name = "Document_ID")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Document_ID", referencedColumnName = "id")
     private Document document;
 
     public Emprunt() {

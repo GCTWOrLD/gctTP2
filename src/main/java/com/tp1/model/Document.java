@@ -14,7 +14,7 @@ public abstract class Document {
     private String auteur;
     private int annee;
 
-    @OneToOne(mappedBy = "Emprunt_ID")
+    @OneToOne(mappedBy = "document")
     private Emprunt emprunt;
 
     public Document() {

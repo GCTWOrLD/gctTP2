@@ -8,10 +8,12 @@ import java.util.List;
 @DiscriminatorValue("Client")
 public class Client extends Personne {
 
-    @OneToMany(mappedBy = "emprunt")
+    @OneToMany(mappedBy = "client")
+    @Column(nullable = true)
     private List<Emprunt> emprunts = new ArrayList<>();
 
-    @OneToMany(mappedBy = "amendes")
+    @OneToMany(mappedBy = "client")
+    @Column(nullable = true)
     private List<Amende> amendes = new ArrayList<>();
     public Client() {
 
