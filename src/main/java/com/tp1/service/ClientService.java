@@ -1,12 +1,10 @@
 package com.tp1.service;
 
-import com.tp1.model.Cd;
-import com.tp1.model.Dvd;
-import com.tp1.model.Emprunt;
-import com.tp1.model.Livre;
+import com.tp1.model.*;
 import com.tp1.persistence.EmpruntDao;
 
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 
 public class ClientService {
 
@@ -25,5 +23,9 @@ public class ClientService {
             emprunt.setDateRetour(emprunt.getDateEmprunt().plus(1, ChronoUnit.WEEKS));
         }
         empruntDao.save(emprunt);
+    }
+
+    public List<Emprunt> showEmprunts (int id) {
+        return empruntDao.showEmprunts(id);
     }
 }

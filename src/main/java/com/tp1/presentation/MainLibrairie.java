@@ -60,5 +60,7 @@ public class MainLibrairie {
         adminService.createClient(client);
 
         clientService.createEmprunt(emprunt);
+
+        System.out.println(clientService.showEmprunts(1));
     }
 }
